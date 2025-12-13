@@ -21,6 +21,11 @@ class DataParsing:
         self.result['variables'] = self.df["solution"].apply(lambda x: x.get("header", None))
 
     def _domains(self):
+        # The current logic assumes the lists in the text are always in the same order
+        # as the 'variables' list. In some puzzles, these are shuffled (e.g., Colors comes before Names).
+        # We should use keywords (like checking if 'Red' is in the list) to match the correct list to the correct variable.
+        # Otherwise, we end up assigning 'Red' to 'Name' and the solver breaks.
+
         for index, problem in enumerate(self.df["puzzle"]):
             vars = self.result.loc[index, "variables"]
 
@@ -53,6 +58,8 @@ class DataParsing:
         #TODO convert words to numbers
 
         word_num = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9, 'ten':10, 'first':1, 'second':2, 'third':3, 'fourth':4, 'fifth':5, 'sixt':6, 'seventh':7, 'ninth':9, 'tenth':10}
+
+        # i think this shouldn't select just the first puzzle
         puzzles = self.df['puzzle'][[0]]
         domains = self.result.domains
 
@@ -60,6 +67,9 @@ class DataParsing:
             clue_list = []
             constraint_list = []    
             curr_domain = [item for sublist in domains[index].values() for item in sublist] #flatten nested list
+
+            # The 'House' domain contains Integers (1, 2, 3), which don't have a .lower() method.
+            # Cast to string first -> [str(x).lower()[:3] for x in curr_domain]
             curr_domain_short = [x.lower()[:3] for x in curr_domain]
             #filter all constraints using '1.' etc.
             for i in puzzle.splitlines(): 
@@ -67,12 +77,19 @@ class DataParsing:
                     clue_list.append(i)
 
             #sort constraints
-            for con in clue_list: 
+            for con in clue_list:
+
+                # We should strip the leading number (e.g. "1. ")
+                # because the loop below sometimes thinks "1." is a word and tries to match it.
                 first = None
                 second = None
                 tmp_distance=None
 
-                for word in con.split(' '): 
+                # Replace the 3-character slicing logic with Length-Priority Matching
+                # 1. Sort `curr_domain` by length (descending).
+                # 2. Iterate through the domain and check `if item in constraint_string`.
+                # Sorting by length ensures specific entities ("Blue Master") are matched before generic ones ("Blue").
+                for word in con.split(' '):
                     if word[:3].lower() in curr_domain_short and first==None:
                         first = curr_domain[curr_domain_short.index(word.lower()[:3])]
                     elif word[:3].lower() in curr_domain_short:
