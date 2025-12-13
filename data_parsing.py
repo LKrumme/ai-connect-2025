@@ -6,17 +6,46 @@ class DataParsing:
 
     def __init__(self, df: pd.DataFrame) -> None:
         self.df = df
-        self.result = pd.DataFrame() 
+        self.result = pd.DataFrame(columns=['id', 'size', 'variables', 'domains', 'constraints']) 
         self.result['id'] = self.df['id']
         self.result['size'] = self.df['size']
+        
 
     def get_csp(self) -> pd.DataFrame:
         return self.result
 
     def _variables(self):
-        pass
+        self.result['variables'] = self.df["solution"].apply(lambda x: x.get("header", None))
+
     def _domains(self):
-        pass
+        for index, problem in enumerate(self.df["puzzle"]):
+            vars = self.result.loc[index, "variables"]
+
+            # output Directionairy
+            results = {}
+
+            i = 0
+            # "House" doesn't have given Values, so we generate them ourselves
+            if(vars[i] == "House"):
+                houses = []
+
+                # Generates the Domain for houses
+                for h_Count in range(int(self.df["size"][index][0])):
+                    houses.append(h_Count+1)
+                    results["House"] = houses
+
+            for line in problem.splitlines():
+                if line.strip().startswith("-"):
+
+                    i = i+1
+                    # Filters all Expressions, that are in Between of '
+                    # resulting List gets addedd as a new Domain
+                    names = re.findall(r"`([^`]*)`", line)
+                    results[vars[i]] = names
+                    
+
+            self.result.at[index, "domains"] = results
+
     def _constraints(self):     
         word_num = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9, 'ten':10, 'first':1, 'second':2, 'third':3, 'fourth':4, 'fifth':5, 'sixt':6, 'seventh':7, 'ninth':9, 'tenth':10}
         puzzles = self.df.puzzle 
@@ -134,4 +163,7 @@ class RightConstraint(Constraint):
     
 if __name__ == "__main__":
     dp = DataParsing(pd.read_parquet("data/Gridmode-00000-of-00001.parquet"))
-    print(dp._constraints())
+    print(dp._variables())
+
+    print(dp._domains())
+    print(dp.result['domains'][0])
