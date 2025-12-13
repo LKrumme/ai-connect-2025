@@ -12,6 +12,9 @@ class DataParsing:
         
 
     def get_csp(self) -> pd.DataFrame:
+        self._variables()
+        self._domains()
+        self._constraints()
         return self.result
 
     def _variables(self):
@@ -212,11 +215,4 @@ class RightConstraint(Constraint):
 if __name__ == "__main__":
     df = pd.read_parquet("data/Gridmode-00000-of-00001.parquet")
     dp = DataParsing(df)
-    dp._variables()
-    dp._domains()
-    print(dp.result['variables'][0])
-    print(dp.result['domains'][0])
-    print(df.puzzle[0])
-
-    dp._constraints()
-    print(dp.result)
+    print(dp.get_csp())
