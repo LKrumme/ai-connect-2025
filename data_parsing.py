@@ -37,24 +37,27 @@ class DataParsing:
             for line in problem.splitlines():
                 if line.strip().startswith("-"):
 
-                    i = i+1
                     # Filters all Expressions, that are in Between of '
                     # resulting List gets addedd as a new Domain
                     names = re.findall(r"`([^`]*)`", line)
                     results[vars[i]] = names
+                    i = i+1
                     
 
             self.result.at[index, "domains"] = results
 
     def _constraints(self):     
-        word_num = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9, 'ten':10, 'first':1, 'second':2, 'third':3, 'fourth':4, 'fifth':5, 'sixt':6, 'seventh':7, 'ninth':9, 'tenth':10}
-        puzzles = self.df.puzzle 
-        clue_list = []
-        constraint_list = []
+        #TODO convert words to numbers
 
-        
-        for puzzle in puzzles:
-            
+        word_num = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9, 'ten':10, 'first':1, 'second':2, 'third':3, 'fourth':4, 'fifth':5, 'sixt':6, 'seventh':7, 'ninth':9, 'tenth':10}
+        puzzles = self.df['puzzle'][[0]]
+        domains = self.result.domains
+
+        for index, puzzle in enumerate(puzzles):
+            clue_list = []
+            constraint_list = []    
+            curr_domain = [item for sublist in domains[index].values() for item in sublist] #flatten nested list
+            curr_domain_short = [x.lower()[:3] for x in curr_domain]
             #filter all constraints using '1.' etc.
             for i in puzzle.splitlines(): 
                 if re.match(r'^[0-9]+[.]', i):
@@ -62,7 +65,20 @@ class DataParsing:
 
             #sort constraints
             for con in clue_list: 
-                #TODO rework section below to a match case
+                first = None
+                second = None
+                tmp_distance=None
+
+                for word in con.split(' '): 
+                    if word[:3].lower() in curr_domain_short and first==None:
+                        first = curr_domain[curr_domain_short.index(word.lower()[:3])]
+                    elif word[:3].lower() in curr_domain_short:
+                        second = curr_domain[curr_domain_short.index(word.lower()[:3])]
+
+                    #TODO sometimes a number can also be an argument. This only works for the first puzzle 
+                    if word in word_num:
+                        tmp_distance = word_num[word]
+                
 
                 match(con):
                     #leftConstraint
@@ -70,44 +86,66 @@ class DataParsing:
                     #- clue can be 'somewhere to the left' or 'directly left of' 
                     case _ if ' left' in con:
                         if ' directly ' in con:
-                            #direct left constraint
+                            #direct left constraint    
                             print(f'directly left: {con}')
+                            print(LeftConstraint(first, second))
+                            constraint_list.append(LeftConstraint(first, second))
                         elif ' somewhere ' in con: 
                             #somewhere left constraint
                             print(f'somewhere left: {con}')
-                    
+                            print(LeftConstraint(first, second, direct=False))
+                            constraint_list.append(LeftConstraint(first, second, direct=False))
                     #rightConstraint same as left constraint
                     case _ if ' right' in con: 
                         if ' somewhere ' in con: 
                             #somewhere right constraint
                             print(f'somewhere right: {con}')
+                            print(RightConstraint(first, second, direct=False))
+                            constraint_list.append(RightConstraint(first, second, direct=False))
 
                         #there shuoldn't be a 'directly right' constraint. Leaving it just in case.    
                         elif ' directly ' in con:
                             #direct right constraint
                             print(f'directly right: {con}')
+                            print(RightConstraint(first, second))
+                            constraint_list.append(RightConstraint(first, second))
                     
                     #nextToConstraint: 
                     case _ if ' next to each other' in con: 
+                        #TODO distance
                         print(f'next to each other: {con}')
+                        print(LeftOrRightConstraint(first, second))
+                        constraint_list.append(LeftOrRightConstraint(first, second))
 
                     #betweenConstraint
                     case _ if ' between' in con: 
+                        #TODO distance
                         print(f'between: {con}')
+                        print(BetweenContraint(first, second, distance=tmp_distance))
+                        constraint_list.append(BetweenContraint(first, second, distance=tmp_distance))
                 
                     #isNotConstraint
                     case _ if ' is not ' in con: 
                         print(f'is not: {con}')
-                        
+                        print(IsNotConstraint(first, second))
+                        constraint_list.append(IsNotConstraint(first, second))
+
                     #isConstraint
                     case _: 
                         print(f'is: {con}')
+                        print(IsContraint(first, second))
+                        constraint_list.append(IsContraint(first, second))
+            self.result.at[index, 'constraints'] = constraint_list
                 
 
 class Constraint: 
     """Parent Class for all Constraints"""
-    def __init__(self):
-        pass
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y 
+
+    def __repr__(self):
+        return f'<{self.__class__.__name__}, {self.x}, {self.y}>'
 
     def is_satisfied(self):
         pass
@@ -115,24 +153,28 @@ class Constraint:
 
 class LeftConstraint(Constraint):
     """Constraint for 'x is left of y'"""
-    def __init__(self, x, y, distance:int=0):
-        pass
+    def __init__(self, x, y, direct=True):
+        super().__init__(x, y)
+        self.direct=direct
     
     def is_satisfied(self):
         return super().is_satisfied()
     
+    def __repr__(self):
+        return f'<{self.__class__.__name__}, {self.x}, {self.y}, direct={self.direct}>' 
+    
 class IsContraint(Constraint):
     """Constraint for 'x is y' """
-    def __init__(self):
-        super().__init__()
+    def __init__(self,x,y):
+        super().__init__(x, y)
 
     def is_satisfied(self):
         return super().is_satisfied()
     
 class IsNotConstraint(Constraint):
     """Constraint for 'x is not y' """
-    def __init__(self):
-        super().__init__()
+    def __init__(self,x,y):
+        super().__init__(x, y)
     
     def is_satisfied(self):
         return super().is_satisfied()
@@ -140,30 +182,41 @@ class IsNotConstraint(Constraint):
 class LeftOrRightConstraint(Constraint):
     """Constraint for 'x is next to y'"""
     def __init__(self, x, y, distance:int=0):
-        super().__init__()
+        super().__init__(x, y)
+        self.distance=distance
 
     def is_satisfied(self):
         return super().is_satisfied()
     
 class BetweenContraint(Constraint):
-    """Constraint for 'between x and y is one House'"""
-    def __init__(self):
-        super().__init__()
+    """Constraint for 'between x and y is distance House'"""
+    def __init__(self,x,y,distance:int|None=0):
+        super().__init__(x, y)
+        self.distance=distance
 
     def is_satisfied(self):
         return super().is_satisfied()
+    
+    def __repr__(self):
+        return f'<{self.__class__.__name__}, {self.x}, {self.y}, distance={self.distance}>' 
 
 class RightConstraint(Constraint):
     """Constraint for 'x is right of y'"""
-    def __init__(self, x, y, distance:int=0):
-        super().__init__()
+    def __init__(self, x, y, direct=True):
+        super().__init__(x, y)
+        self.direct=direct
 
     def is_satisfied(self):
         return super().is_satisfied()
     
 if __name__ == "__main__":
-    dp = DataParsing(pd.read_parquet("data/Gridmode-00000-of-00001.parquet"))
-    print(dp._variables())
-
-    print(dp._domains())
+    df = pd.read_parquet("data/Gridmode-00000-of-00001.parquet")
+    dp = DataParsing(df)
+    dp._variables()
+    dp._domains()
+    print(dp.result['variables'][0])
     print(dp.result['domains'][0])
+    print(df.puzzle[0])
+
+    dp._constraints()
+    print(dp.result)
