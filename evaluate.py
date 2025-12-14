@@ -1,95 +1,91 @@
 import pandas as pd
-import time
 import json
+import time
 from data_parsing import DataParsing
 from bridge import BridgeParser
 from solver import Solver
 
-def evaluate_dataset(file_path, limit=None):
-
-    print(f"Loading dataset from: {file_path}")
-    df = pd.read_parquet(file_path)
+def evaluate_dataset(parquet_path, output_path="final_results.json", limit=None):
+    print(f"Loading dataset from: {parquet_path}")
+    df = pd.read_parquet(parquet_path)
 
     if limit:
-        df = df.head(limit)
         print(f"Limiting run to first {limit} puzzles.")
+        df = df.head(limit)
 
-    print(f"Parsing {len(df)} puzzles (Teammate's Module)...")
-    start_time = time.time()
-
+    print("Parsing puzzles (Teammate's Module)...")
+    start_parse = time.time()
     parser = DataParsing(df)
     parsed_data = parser.get_csp()
+    print(f"Parsing completed in {time.time() - start_parse:.2f}s")
 
-    print(f"Parsing completed in {time.time() - start_time:.2f}s")
-    print("-" * 50)
-
-    # Statistics
-    stats = {
-        'total': len(parsed_data),
-        'solved': 0,
-        'failed': 0,
-        'errors': 0, # Parser or Bridge failures
-        'total_steps': 0,
-        'results': {}
+    results = {
+        "total": len(df),
+        "solved": 0,
+        "failed": 0,
+        "errors": 0,
+        "total_steps": 0,
+        "results": {}
     }
 
-    # Loop through every puzzle
+    print("-" * 50)
+
     for index, row in parsed_data.iterrows():
-        p_id = row.get('id', f'index_{index}')
-
+        p_id = row['id']
         try:
-            if not isinstance(row['constraints'], list) or not isinstance(row['domains'], dict):
-                raise ValueError("Invalid format from DataParsing module")
-
-            bridge = BridgeParser(
-                size_str=row['size'],
-                raw_constraints=row['constraints'],
-                raw_domains=row['domains']
-            )
+            bridge = BridgeParser(row['size'], row['constraints'], row['domains'])
             vars, doms, cons = bridge.get_solver_data()
 
-            # 4. Solver
-            solver = Solver(vars, doms, cons)
-            solution = solver.solve()
+            solver = Solver(vars, doms, cons, max_steps=5000)
+            solution, status = solver.solve()
 
-            steps = solver.get_search_steps()
-            stats['total_steps'] += steps
+            steps = solver.search_steps
+            results["total_steps"] += steps
 
             if solution:
-                stats['solved'] += 1
-                stats['results'][p_id] = {'status': 'solved', 'steps': steps}
-                if index % 10 == 0:
-                    print(f"✓ Puzzle {index+1}: Solved ({steps} steps)")
+                results["solved"] += 1
+                results["results"][p_id] = {
+                    "status": "solved",
+                    "steps": steps
+                }
+                print(f"✓ Puzzle {index+1}: Solved ({steps} steps)")
             else:
-                stats['failed'] += 1
-                stats['results'][p_id] = {'status': 'failed', 'steps': steps}
-                print(f"✗ Puzzle {index+1}: Failed to find solution")
+                results["failed"] += 1
+                results["results"][p_id] = {
+                    "status": "failed",
+                    "reason": status,
+                    "steps": steps
+                }
+
+                print(f"✗ Puzzle {index+1}: Failed -> {status}")
+                if index < 5:
+                    print(f"  DEBUG: Vars: {len(vars)} | Constraints: {len(cons)}")
+                    print(f"  Domains: {doms}")
+
 
         except Exception as e:
-            stats['errors'] += 1
-            stats['results'][p_id] = {'status': 'error', 'error': str(e)}
+            results["errors"] += 1
+            results["results"][p_id] = {"status": "error", "error": str(e)}
+            print(f"Error on {p_id}: {e}")
 
-
+    # Final Stats
     print("=" * 50)
     print("EVALUATION COMPLETE")
     print("=" * 50)
+    print(f"Total Puzzles: {results['total']}")
+    success_rate = (results['solved'] / results['total']) * 100
+    avg_steps = results['total_steps'] / results['total'] if results['total'] > 0 else 0
 
-    accuracy = (stats['solved'] / stats['total']) * 100
-    avg_steps = stats['total_steps'] / stats['solved'] if stats['solved'] > 0 else 0
-
-    print(f"Total Puzzles: {stats['total']}")
-    print(f"Success Rate:  {accuracy:.2f}% ({stats['solved']}/{stats['total']})")
+    print(f"Success Rate:  {success_rate:.2f}% ({results['solved']}/{results['total']})")
     print(f"Average Steps: {avg_steps:.2f}")
-    print(f"Failures:      {stats['failed']} (Solver returned None)")
-    print(f"Errors:        {stats['errors']} (Parser/Bridge crashed)")
+    print(f"Failures:      {results['failed']}")
+    print(f"Errors:        {results['errors']}")
     print("=" * 50)
 
-    # Save details to JSON
-    with open("final_results.json", "w") as f:
-        json.dump(stats, f, indent=2)
-    print("Detailed results saved to 'final_results.json'")
+    with open(output_path, "w") as f:
+        json.dump(results, f, indent=2)
+    print(f"Detailed results saved to '{output_path}'")
 
 if __name__ == "__main__":
     PATH = "data/Gridmode-00000-of-00001.parquet"
-
     evaluate_dataset(PATH)
