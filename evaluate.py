@@ -5,6 +5,57 @@ from data_parsing import DataParsing
 from bridge import BridgeParser
 from solver import Solver
 
+def verify_ground_truth(solver_assignments, ground_truth_raw, bridge):
+    if not solver_assignments:
+        return False, "No Solution"
+
+    try:
+        data = json.loads(ground_truth_raw) if isinstance(ground_truth_raw, str) else ground_truth_raw
+    except:
+        return False, "JSON Error"
+
+    headers = data.get("header", [])
+    rows = data.get("rows", [])
+
+    if len(rows) == 0 or len(headers) == 0:
+        return False, "Empty Data"
+
+    if hasattr(rows, 'tolist'):
+        rows = rows.tolist()
+
+    if len(rows) > 0 and hasattr(rows[0], 'tolist'):
+        rows = [r.tolist() for r in rows]
+
+    if len(rows) > 0 and not isinstance(rows[0], (list, tuple)):
+        try:
+            width = len(headers)
+            rows = [rows[i : i + width] for i in range(0, len(rows), width)]
+        except:
+            return False, "Malformed Data"
+
+    # Verification loop
+    for row in rows:
+        try:
+            if len(row) == 0: continue
+            true_house = int(row[0])
+        except (ValueError, IndexError, TypeError):
+            continue
+
+        for col_idx, val in enumerate(row):
+            if col_idx == 0: continue
+            if col_idx >= len(headers): break
+
+            var_key = bridge.item_to_var_map.get(str(val).lower())
+
+            if var_key:
+                if var_key not in solver_assignments:
+                    return False, f"Missing: {var_key}"
+
+                if solver_assignments[var_key] != true_house:
+                    return False, f"Mismatch: {var_key} ({solver_assignments[var_key]} vs {true_house})"
+
+    return True, "Match"
+
 def evaluate_dataset(parquet_path, output_path="final_results.json", limit=None):
     print(f"Loading dataset from: {parquet_path}")
     df = pd.read_parquet(parquet_path)
@@ -13,7 +64,6 @@ def evaluate_dataset(parquet_path, output_path="final_results.json", limit=None)
         print(f"Limiting run to first {limit} puzzles.")
         df = df.head(limit)
 
-    print("Parsing puzzles (Teammate's Module)...")
     start_parse = time.time()
     parser = DataParsing(df)
     parsed_data = parser.get_csp()
@@ -36,6 +86,12 @@ def evaluate_dataset(parquet_path, output_path="final_results.json", limit=None)
             bridge = BridgeParser(row['size'], row['constraints'], row['domains'])
             vars, doms, cons = bridge.get_solver_data()
 
+            # Sanity Check for Empty Parser
+            if len(cons) < 1:
+                print(f"Puzzle {index+1}: Parser found only {len(cons)} constraints")
+                results["failed"] += 1
+                continue
+
             solver = Solver(vars, doms, cons, max_steps=5000)
             solution, status = solver.solve()
 
@@ -43,12 +99,25 @@ def evaluate_dataset(parquet_path, output_path="final_results.json", limit=None)
             results["total_steps"] += steps
 
             if solution:
-                results["solved"] += 1
-                results["results"][p_id] = {
-                    "status": "solved",
-                    "steps": steps
-                }
-                print(f"✓ Puzzle {index+1}: Solved ({steps} steps)")
+                ground_truth = df.iloc[index]['solution']
+                is_correct, reason = verify_ground_truth(solution, ground_truth, bridge)
+
+                if is_correct:
+                    results["solved"] += 1
+                    results["results"][p_id] = {
+                        "status": "solved",
+                        "steps": steps,
+                        "verified": True
+                    }
+                    print(f"✓ Puzzle {index+1}: Solved & Verified ({steps} steps)")
+                else:
+                    results["failed"] += 1
+                    results["results"][p_id] = {
+                        "status": "failed",
+                        "reason": f"Wrong Solution: {reason}",
+                        "steps": steps
+                    }
+                    print(f"Puzzle {index+1}: Solved but WRONG -> {reason}")
             else:
                 results["failed"] += 1
                 results["results"][p_id] = {
@@ -56,12 +125,7 @@ def evaluate_dataset(parquet_path, output_path="final_results.json", limit=None)
                     "reason": status,
                     "steps": steps
                 }
-
                 print(f"✗ Puzzle {index+1}: Failed -> {status}")
-                if index < 5:
-                    print(f"  DEBUG: Vars: {len(vars)} | Constraints: {len(cons)}")
-                    print(f"  Domains: {doms}")
-
 
         except Exception as e:
             results["errors"] += 1
