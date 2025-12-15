@@ -1,0 +1,4074 @@
+{
+  "total": 1000,
+  "solved": 935,
+  "failed": 65,
+  "errors": 0,
+  "total_steps": 34037,
+  "results": {
+    "lgp-test-5x6-16": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-4x4-27": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-6x4-15": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-6x5-2": {
+      "status": "solved",
+      "steps": 33
+    },
+    "lgp-test-2x2-33": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-4x4-3": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 3
+    },
+    "lgp-test-2x4-5": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x5-30": {
+      "status": "solved",
+      "steps": 79
+    },
+    "lgp-test-3x5-34": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-4x5-3": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x6-24": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x2-9": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x2-18": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x2-15": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-5x4-2": {
+      "status": "solved",
+      "steps": 28
+    },
+    "lgp-test-4x4-21": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-5x6-0": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-2x3-9": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x5-12": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-3x5-16": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-4x3-10": {
+      "status": "solved",
+      "steps": 15
+    },
+    "lgp-test-5x6-30": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-3x5-30": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-4x3-27": {
+      "status": "solved",
+      "steps": 24
+    },
+    "lgp-test-5x2-22": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x3-36": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x2-14": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x5-34": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-3x6-5": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-5x6-10": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-5x2-30": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x5-20": {
+      "status": "solved",
+      "steps": 65
+    },
+    "lgp-test-5x6-37": {
+      "status": "solved",
+      "steps": 34
+    },
+    "lgp-test-4x4-16": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-6x5-4": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-3x6-9": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-4x6-36": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x5-0": {
+      "status": "solved",
+      "steps": 74
+    },
+    "lgp-test-2x3-13": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x2-26": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-2x3-16": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x3-24": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-5x6-12": {
+      "status": "solved",
+      "steps": 34
+    },
+    "lgp-test-2x6-25": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x3-26": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x6-29": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-2x6-14": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x5-30": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-5x5-21": {
+      "status": "solved",
+      "steps": 28
+    },
+    "lgp-test-2x4-33": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x2-28": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x6-5": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    },
+    "lgp-test-2x2-18": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-2x6-29": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x2-14": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x6-29": {
+      "status": "solved",
+      "steps": 62
+    },
+    "lgp-test-5x3-26": {
+      "status": "solved",
+      "steps": 18
+    },
+    "lgp-test-5x6-3": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-3x2-21": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x6-26": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-4x6-21": {
+      "status": "solved",
+      "steps": 27
+    },
+    "lgp-test-3x4-19": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x2-38": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-3x6-26": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x6-4": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-6x3-39": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x5-14": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x2-16": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-3x2-2": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x2-1": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-2x2-38": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-3x4-10": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x4-13": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x3-7": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-4x4-26": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-6x4-16": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x4-33": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-6x4-11": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 5
+    },
+    "lgp-test-2x3-36": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-6x4-31": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x6-32": {
+      "status": "solved",
+      "steps": 204
+    },
+    "lgp-test-4x4-28": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-2x6-17": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x3-2": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x2-0": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x6-5": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 67
+    },
+    "lgp-test-6x4-29": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-3x4-13": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x5-18": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x2-24": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-5x4-14": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-3x2-10": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x2-24": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x5-8": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x2-34": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-6x5-8": {
+      "status": "solved",
+      "steps": 33
+    },
+    "lgp-test-3x6-38": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-5x2-7": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-3x4-18": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x3-8": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-5x3-28": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-3x4-2": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-6x5-19": {
+      "status": "solved",
+      "steps": 33
+    },
+    "lgp-test-6x5-24": {
+      "status": "solved",
+      "steps": 44
+    },
+    "lgp-test-5x2-6": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x5-39": {
+      "status": "solved",
+      "steps": 92
+    },
+    "lgp-test-6x5-14": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-5x5-11": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 26
+    },
+    "lgp-test-3x4-7": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x5-7": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-6x2-7": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x2-29": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x2-36": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-2x2-28": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-3x6-14": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-6x2-19": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x4-36": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x6-0": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-3x3-1": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-2x5-29": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x4-36": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-4x2-17": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x3-20": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x6-38": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x6-25": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-3x5-5": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x2-23": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x4-22": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-6x5-29": {
+      "status": "solved",
+      "steps": 33
+    },
+    "lgp-test-4x4-35": {
+      "status": "solved",
+      "steps": 23
+    },
+    "lgp-test-6x3-24": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-6x2-36": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x3-37": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x5-39": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-4x6-34": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 43
+    },
+    "lgp-test-5x6-28": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-2x6-28": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 2
+    },
+    "lgp-test-2x3-26": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x5-35": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x6-39": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-6x4-22": {
+      "status": "solved",
+      "steps": 84
+    },
+    "lgp-test-6x5-0": {
+      "status": "solved",
+      "steps": 40
+    },
+    "lgp-test-6x5-22": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-3x5-10": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x5-7": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-3x6-36": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-4x3-23": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x6-33": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x4-31": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x4-0": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-5x5-24": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-6x5-1": {
+      "status": "solved",
+      "steps": 33
+    },
+    "lgp-test-4x3-21": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-4x5-2": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-5x2-31": {
+      "status": "solved",
+      "steps": 15
+    },
+    "lgp-test-4x4-10": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-2x6-35": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x3-16": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-5x4-13": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-5x5-20": {
+      "status": "solved",
+      "steps": 50
+    },
+    "lgp-test-4x6-17": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-2x5-37": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-5x2-12": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-3x6-32": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-6x6-9": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    },
+    "lgp-test-5x4-8": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-3x6-1": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-6x2-16": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x2-1": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-2x4-12": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x4-37": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 4218
+    },
+    "lgp-test-4x4-9": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-4x3-11": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x3-11": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-5x3-13": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x6-9": {
+      "status": "solved",
+      "steps": 51
+    },
+    "lgp-test-5x3-30": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x5-9": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-5x2-37": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x6-31": {
+      "status": "solved",
+      "steps": 46
+    },
+    "lgp-test-3x5-22": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-3x4-28": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x5-16": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-2x4-8": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x5-7": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-4x3-35": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x6-21": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 140
+    },
+    "lgp-test-6x3-10": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 16
+    },
+    "lgp-test-6x4-12": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-3x6-15": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-2x6-18": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x2-26": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-3x5-29": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-4x4-19": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-4x3-34": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x2-17": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-5x4-17": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x3-10": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x2-11": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x6-21": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-6x4-3": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-2x6-13": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x5-27": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    },
+    "lgp-test-4x2-19": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x6-1": {
+      "status": "solved",
+      "steps": 37
+    },
+    "lgp-test-2x5-28": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x6-15": {
+      "status": "solved",
+      "steps": 40
+    },
+    "lgp-test-2x3-39": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x6-15": {
+      "status": "solved",
+      "steps": 43
+    },
+    "lgp-test-3x4-22": {
+      "status": "solved",
+      "steps": 20
+    },
+    "lgp-test-6x6-35": {
+      "status": "solved",
+      "steps": 37
+    },
+    "lgp-test-4x5-5": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 7
+    },
+    "lgp-test-5x6-14": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-3x2-31": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x2-25": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x2-0": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x6-1": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-4x4-29": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-6x3-0": {
+      "status": "solved",
+      "steps": 20
+    },
+    "lgp-test-4x4-14": {
+      "status": "solved",
+      "steps": 23
+    },
+    "lgp-test-2x4-39": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x3-37": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x5-24": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 2
+    },
+    "lgp-test-2x2-29": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-6x4-30": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 254
+    },
+    "lgp-test-2x5-1": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 2
+    },
+    "lgp-test-5x2-5": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 13
+    },
+    "lgp-test-2x3-21": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-6x3-31": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-4x6-12": {
+      "status": "solved",
+      "steps": 27
+    },
+    "lgp-test-2x2-5": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-6x5-6": {
+      "status": "solved",
+      "steps": 330
+    },
+    "lgp-test-5x2-39": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x2-39": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x5-9": {
+      "status": "solved",
+      "steps": 28
+    },
+    "lgp-test-2x6-33": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x5-32": {
+      "status": "solved",
+      "steps": 37
+    },
+    "lgp-test-5x2-26": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x6-11": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-2x2-17": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-5x5-22": {
+      "status": "solved",
+      "steps": 35
+    },
+    "lgp-test-6x4-34": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-4x4-30": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-4x6-13": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 34
+    },
+    "lgp-test-2x5-18": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-2x6-31": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x2-4": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-4x3-3": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x2-20": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-3x2-13": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x3-24": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x2-11": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x4-21": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x5-13": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x6-32": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x3-24": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-3x3-22": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-5x3-7": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x2-10": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x2-32": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x6-35": {
+      "status": "solved",
+      "steps": 38
+    },
+    "lgp-test-5x4-1": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-6x2-4": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x4-2": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-3x6-0": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-6x2-38": {
+      "status": "solved",
+      "steps": 75
+    },
+    "lgp-test-3x2-36": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x2-27": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x5-37": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-4x6-22": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-3x3-32": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-3x2-1": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x2-13": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-4x2-27": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x2-39": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x4-4": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x5-12": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x6-12": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x4-9": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x4-5": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-3x5-9": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x4-3": {
+      "status": "solved",
+      "steps": 29
+    },
+    "lgp-test-3x4-38": {
+      "status": "solved",
+      "steps": 18
+    },
+    "lgp-test-4x3-14": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x3-9": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-6x3-6": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x3-39": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-4x3-15": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x4-21": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x6-1": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 39
+    },
+    "lgp-test-4x5-27": {
+      "status": "solved",
+      "steps": 30
+    },
+    "lgp-test-2x6-20": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x5-37": {
+      "status": "solved",
+      "steps": 29
+    },
+    "lgp-test-5x2-28": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x2-23": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x3-3": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-2x2-10": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-2x6-39": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x2-25": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x5-14": {
+      "status": "solved",
+      "steps": 58
+    },
+    "lgp-test-2x2-31": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-4x6-19": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-4x2-4": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x3-37": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-4x3-4": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x6-11": {
+      "status": "solved",
+      "steps": 34
+    },
+    "lgp-test-3x6-12": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-5x5-2": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-4x2-0": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-2x3-38": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x5-17": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 8
+    },
+    "lgp-test-4x6-15": {
+      "status": "solved",
+      "steps": 27
+    },
+    "lgp-test-4x5-28": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-5x4-30": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-2x3-1": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-6x4-5": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x2-32": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x3-18": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x5-19": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-3x6-25": {
+      "status": "solved",
+      "steps": 22
+    },
+    "lgp-test-4x3-16": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x5-12": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-6x2-13": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x5-20": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-5x2-24": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-3x5-0": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x4-28": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-4x3-17": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x3-33": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x5-6": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x5-6": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-2x5-12": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x2-17": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x6-37": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-6x4-35": {
+      "status": "solved",
+      "steps": 27
+    },
+    "lgp-test-6x6-33": {
+      "status": "solved",
+      "steps": 37
+    },
+    "lgp-test-4x2-15": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x6-35": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 46
+    },
+    "lgp-test-3x3-18": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-3x4-33": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x2-9": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-2x6-2": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x4-24": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x4-6": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x3-4": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x2-35": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-3x5-33": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x3-28": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x3-38": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x2-33": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x5-15": {
+      "status": "solved",
+      "steps": 70
+    },
+    "lgp-test-5x3-39": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x4-39": {
+      "status": "solved",
+      "steps": 23
+    },
+    "lgp-test-3x2-37": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x3-25": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-2x4-10": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x2-35": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x3-22": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 798
+    },
+    "lgp-test-2x3-14": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x3-17": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x5-23": {
+      "status": "solved",
+      "steps": 34
+    },
+    "lgp-test-4x2-6": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x6-20": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-2x5-4": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x4-11": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-6x2-2": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x4-20": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-4x2-30": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x5-25": {
+      "status": "solved",
+      "steps": 41
+    },
+    "lgp-test-5x4-23": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-3x4-14": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x3-38": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x2-12": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-6x4-38": {
+      "status": "solved",
+      "steps": 27
+    },
+    "lgp-test-2x2-37": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-6x3-20": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-6x4-18": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-2x5-5": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-2x2-23": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-6x2-39": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x6-16": {
+      "status": "solved",
+      "steps": 738
+    },
+    "lgp-test-2x4-21": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-2x4-35": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x2-35": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x5-30": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-2x5-0": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-3x6-24": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-2x3-7": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x6-11": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x4-37": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x5-4": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x4-0": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-3x3-23": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-2x5-25": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-2x3-3": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x4-24": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-2x4-6": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x6-16": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-4x5-10": {
+      "status": "solved",
+      "steps": 23
+    },
+    "lgp-test-6x6-24": {
+      "status": "solved",
+      "steps": 39
+    },
+    "lgp-test-6x3-11": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x5-25": {
+      "status": "solved",
+      "steps": 22
+    },
+    "lgp-test-4x2-3": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x2-26": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-6x6-27": {
+      "status": "solved",
+      "steps": 375
+    },
+    "lgp-test-2x6-4": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x5-15": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x2-0": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 10
+    },
+    "lgp-test-6x4-36": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-4x3-32": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x3-7": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x4-27": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x3-16": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-2x5-35": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x3-18": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x4-0": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x2-7": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x5-34": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x6-27": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x5-37": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 7
+    },
+    "lgp-test-6x6-25": {
+      "status": "solved",
+      "steps": 101
+    },
+    "lgp-test-3x6-23": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    },
+    "lgp-test-6x2-1": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x3-8": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 3
+    },
+    "lgp-test-6x2-6": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x5-16": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-4x4-23": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-5x5-17": {
+      "status": "solved",
+      "steps": 416
+    },
+    "lgp-test-4x5-39": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-4x5-24": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-3x5-36": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-3x2-6": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-6x4-8": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x2-11": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x4-31": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-4x5-11": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-3x3-19": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-2x5-33": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x3-12": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-2x3-23": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x2-34": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x5-19": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-4x4-33": {
+      "status": "solved",
+      "steps": 24
+    },
+    "lgp-test-5x5-28": {
+      "status": "solved",
+      "steps": 43
+    },
+    "lgp-test-4x4-7": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-4x5-4": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-6x4-13": {
+      "status": "solved",
+      "steps": 198
+    },
+    "lgp-test-6x5-32": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 194
+    },
+    "lgp-test-2x6-26": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x3-33": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-3x5-23": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-3x6-17": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-6x4-23": {
+      "status": "solved",
+      "steps": 29
+    },
+    "lgp-test-3x6-8": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-4x6-8": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-3x3-35": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-5x4-10": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-3x3-26": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-5x6-22": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-6x5-17": {
+      "status": "solved",
+      "steps": 478
+    },
+    "lgp-test-4x5-13": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x2-22": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-4x5-22": {
+      "status": "solved",
+      "steps": 55
+    },
+    "lgp-test-2x4-17": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x4-15": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x3-20": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x6-37": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x4-27": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-3x3-21": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-3x4-30": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x6-19": {
+      "status": "solved",
+      "steps": 41
+    },
+    "lgp-test-2x6-0": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x2-2": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x5-19": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x6-16": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x5-6": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-5x6-33": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 17
+    },
+    "lgp-test-6x2-18": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x6-18": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-5x5-36": {
+      "status": "solved",
+      "steps": 27
+    },
+    "lgp-test-3x4-17": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x4-11": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x5-9": {
+      "status": "solved",
+      "steps": 45
+    },
+    "lgp-test-4x3-9": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x3-5": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x2-14": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-4x4-0": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 2
+    },
+    "lgp-test-6x6-36": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 555
+    },
+    "lgp-test-6x3-28": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-4x2-31": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x4-15": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-4x4-22": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 19
+    },
+    "lgp-test-3x3-20": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-3x5-8": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x6-19": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x6-4": {
+      "status": "solved",
+      "steps": 27
+    },
+    "lgp-test-3x6-35": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-4x4-15": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-2x2-35": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-4x3-2": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x5-7": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-5x3-19": {
+      "status": "solved",
+      "steps": 36
+    },
+    "lgp-test-5x2-36": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-2x4-18": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x5-17": {
+      "status": "solved",
+      "steps": 18
+    },
+    "lgp-test-2x2-12": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-5x4-4": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x4-36": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x3-6": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x2-7": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x2-15": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-3x4-32": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x5-38": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-4x3-31": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x2-4": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x2-27": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x4-1": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-2x2-39": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-3x6-31": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-2x4-30": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x2-32": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x2-12": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x6-2": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    },
+    "lgp-test-4x2-21": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-3x5-20": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x6-23": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x6-37": {
+      "status": "solved",
+      "steps": 40
+    },
+    "lgp-test-4x2-22": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-2x6-21": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x4-24": {
+      "status": "solved",
+      "steps": 73
+    },
+    "lgp-test-6x3-21": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-5x3-9": {
+      "status": "solved",
+      "steps": 23
+    },
+    "lgp-test-5x5-25": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 82
+    },
+    "lgp-test-5x4-20": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x4-25": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x4-39": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-5x3-11": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x6-6": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-5x2-19": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x4-25": {
+      "status": "solved",
+      "steps": 181
+    },
+    "lgp-test-3x4-35": {
+      "status": "solved",
+      "steps": 15
+    },
+    "lgp-test-2x3-2": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x5-10": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x3-0": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x5-31": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x6-28": {
+      "status": "solved",
+      "steps": 27
+    },
+    "lgp-test-2x2-36": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-2x5-32": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-5x3-36": {
+      "status": "solved",
+      "steps": 18
+    },
+    "lgp-test-6x6-0": {
+      "status": "solved",
+      "steps": 39
+    },
+    "lgp-test-5x2-1": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x2-37": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x3-12": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x6-25": {
+      "status": "solved",
+      "steps": 38
+    },
+    "lgp-test-3x3-28": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-2x5-13": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-3x5-21": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x2-3": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x3-5": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x4-3": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x3-12": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-6x5-28": {
+      "status": "solved",
+      "steps": 68
+    },
+    "lgp-test-2x3-12": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-6x2-21": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x6-19": {
+      "status": "solved",
+      "steps": 51
+    },
+    "lgp-test-6x6-17": {
+      "status": "solved",
+      "steps": 193
+    },
+    "lgp-test-4x6-39": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-3x2-8": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x5-31": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-3x2-15": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x4-8": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-3x3-38": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-6x5-33": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-6x2-20": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x4-29": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-2x4-38": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x5-21": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-2x5-17": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-2x4-26": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x4-26": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x6-12": {
+      "status": "solved",
+      "steps": 38
+    },
+    "lgp-test-2x2-8": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-6x2-22": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x4-29": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x5-36": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-5x5-23": {
+      "status": "solved",
+      "steps": 61
+    },
+    "lgp-test-5x2-34": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-3x4-11": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x6-18": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-6x4-9": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x2-29": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-3x5-37": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 10
+    },
+    "lgp-test-5x4-32": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-5x2-20": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x4-38": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 10
+    },
+    "lgp-test-5x3-22": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-4x5-30": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x3-35": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x4-22": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x6-16": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-6x3-17": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-2x2-9": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-2x3-34": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-6x5-31": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 74
+    },
+    "lgp-test-4x3-28": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x4-27": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    },
+    "lgp-test-2x5-14": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x3-19": {
+      "status": "solved",
+      "steps": 39
+    },
+    "lgp-test-6x4-4": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-3x3-4": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-5x3-1": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-3x2-9": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x3-27": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-6x3-30": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-4x5-15": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-4x6-18": {
+      "status": "solved",
+      "steps": 34
+    },
+    "lgp-test-6x3-5": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-6x6-8": {
+      "status": "solved",
+      "steps": 41
+    },
+    "lgp-test-2x4-3": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 5
+    },
+    "lgp-test-2x3-0": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x2-8": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x6-32": {
+      "status": "solved",
+      "steps": 28
+    },
+    "lgp-test-6x3-13": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-4x6-23": {
+      "status": "solved",
+      "steps": 37
+    },
+    "lgp-test-2x5-2": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x2-13": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x3-0": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-5x5-3": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-5x2-9": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 10
+    },
+    "lgp-test-5x6-6": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-2x6-30": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x4-2": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x5-0": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-6x3-36": {
+      "status": "solved",
+      "steps": 22
+    },
+    "lgp-test-6x2-5": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x6-23": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-4x4-34": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-4x4-8": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-6x3-7": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 378
+    },
+    "lgp-test-5x3-32": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x3-18": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x5-1": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x4-11": {
+      "status": "solved",
+      "steps": 23
+    },
+    "lgp-test-4x5-35": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-4x6-33": {
+      "status": "solved",
+      "steps": 33
+    },
+    "lgp-test-6x2-37": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-3x2-22": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x4-23": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x4-36": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x5-38": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x4-18": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-4x6-9": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-6x4-17": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-3x4-12": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x3-25": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x6-28": {
+      "status": "solved",
+      "steps": 37
+    },
+    "lgp-test-3x6-39": {
+      "status": "solved",
+      "steps": 24
+    },
+    "lgp-test-2x2-2": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-6x4-6": {
+      "status": "solved",
+      "steps": 27
+    },
+    "lgp-test-2x6-8": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    },
+    "lgp-test-5x5-5": {
+      "status": "solved",
+      "steps": 30
+    },
+    "lgp-test-6x3-29": {
+      "status": "solved",
+      "steps": 22
+    },
+    "lgp-test-3x2-18": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x4-12": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-5x4-35": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-5x5-31": {
+      "status": "solved",
+      "steps": 32
+    },
+    "lgp-test-2x6-10": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x3-2": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-6x6-20": {
+      "status": "solved",
+      "steps": 117
+    },
+    "lgp-test-2x2-15": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-4x5-33": {
+      "status": "solved",
+      "steps": 23
+    },
+    "lgp-test-5x3-27": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x3-11": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-6x6-29": {
+      "status": "solved",
+      "steps": 39
+    },
+    "lgp-test-4x6-3": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 7
+    },
+    "lgp-test-4x3-13": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x3-37": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x3-15": {
+      "status": "solved",
+      "steps": 14
+    },
+    "lgp-test-6x4-32": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x4-37": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 61
+    },
+    "lgp-test-2x6-27": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x2-29": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x5-23": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x6-6": {
+      "status": "solved",
+      "steps": 37
+    },
+    "lgp-test-6x2-14": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x4-25": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-6x5-3": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-3x3-14": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-2x4-31": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x5-27": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-4x2-12": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-2x3-22": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x4-20": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x3-21": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x3-29": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x4-9": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x3-15": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x3-38": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-4x2-20": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x5-35": {
+      "status": "solved",
+      "steps": 30
+    },
+    "lgp-test-3x6-2": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 7
+    },
+    "lgp-test-4x3-1": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-5x3-34": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x5-26": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-2x4-16": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-2x6-34": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x2-16": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x4-29": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 89
+    },
+    "lgp-test-3x3-8": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-4x4-4": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-4x6-30": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-4x6-24": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-2x5-15": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-5x5-33": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-3x2-19": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x6-7": {
+      "status": "solved",
+      "steps": 113
+    },
+    "lgp-test-5x4-5": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-3x4-5": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x3-3": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-4x5-6": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-5x5-8": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-3x5-18": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x3-32": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 457
+    },
+    "lgp-test-2x3-29": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-6x3-34": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-2x3-20": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x3-6": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 10
+    },
+    "lgp-test-5x5-4": {
+      "status": "solved",
+      "steps": 36
+    },
+    "lgp-test-2x3-32": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x2-7": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-6x6-7": {
+      "status": "solved",
+      "steps": 525
+    },
+    "lgp-test-5x5-14": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-3x2-35": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x6-7": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x2-2": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x2-21": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-3x5-26": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    },
+    "lgp-test-6x2-27": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x2-30": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x3-13": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-2x5-3": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x3-22": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x5-9": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-4x3-8": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x2-31": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x6-11": {
+      "status": "solved",
+      "steps": 38
+    },
+    "lgp-test-5x4-7": {
+      "status": "solved",
+      "steps": 23
+    },
+    "lgp-test-6x3-4": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x4-39": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    },
+    "lgp-test-5x5-10": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-3x2-5": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x4-26": {
+      "status": "solved",
+      "steps": 42
+    },
+    "lgp-test-6x5-18": {
+      "status": "solved",
+      "steps": 73
+    },
+    "lgp-test-5x6-24": {
+      "status": "solved",
+      "steps": 39
+    },
+    "lgp-test-6x3-26": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-4x2-33": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x2-21": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x5-20": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-6x3-15": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-2x6-9": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x6-2": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-4x4-6": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 5
+    },
+    "lgp-test-5x3-35": {
+      "status": "solved",
+      "steps": 24
+    },
+    "lgp-test-2x5-11": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-2x5-8": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x5-25": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x3-30": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x4-17": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-5x5-29": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-2x4-7": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x5-13": {
+      "status": "solved",
+      "steps": 110
+    },
+    "lgp-test-6x3-25": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x3-6": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-2x3-19": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x3-5": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-3x4-34": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x6-11": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-6x2-8": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x2-19": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-4x4-20": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-3x5-11": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x2-13": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-2x2-0": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-4x5-23": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-4x5-32": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x6-5": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x6-38": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-3x6-22": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-6x2-34": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x6-13": {
+      "status": "failed",
+      "reason": "TIMEOUT (Step Limit Reached)",
+      "steps": 5011
+    },
+    "lgp-test-6x4-14": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x6-36": {
+      "status": "solved",
+      "steps": 33
+    },
+    "lgp-test-6x6-39": {
+      "status": "solved",
+      "steps": 37
+    },
+    "lgp-test-3x4-25": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x3-0": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x4-28": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x4-39": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-2x6-22": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x6-20": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-4x4-32": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-6x5-10": {
+      "status": "solved",
+      "steps": 64
+    },
+    "lgp-test-5x5-16": {
+      "status": "solved",
+      "steps": 27
+    },
+    "lgp-test-5x5-19": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-2x2-3": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-6x4-28": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-2x6-1": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    },
+    "lgp-test-4x3-5": {
+      "status": "solved",
+      "steps": 15
+    },
+    "lgp-test-6x5-11": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-6x6-38": {
+      "status": "solved",
+      "steps": 236
+    },
+    "lgp-test-6x5-35": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-5x3-16": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x6-27": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-6x4-19": {
+      "status": "solved",
+      "steps": 27
+    },
+    "lgp-test-5x6-8": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-6x5-16": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-5x4-18": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x4-37": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x5-18": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-6x2-30": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-2x2-11": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-4x6-6": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-3x3-17": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-4x5-21": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-4x3-39": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x6-3": {
+      "status": "solved",
+      "steps": 40
+    },
+    "lgp-test-3x6-30": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x6-34": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-2x3-25": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x2-10": {
+      "status": "solved",
+      "steps": 15
+    },
+    "lgp-test-6x5-36": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 8
+    },
+    "lgp-test-5x4-16": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-6x2-11": {
+      "status": "solved",
+      "steps": 15
+    },
+    "lgp-test-6x5-38": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-5x3-2": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x5-36": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-2x4-32": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-2x3-8": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x6-13": {
+      "status": "solved",
+      "steps": 33
+    },
+    "lgp-test-2x4-13": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x4-25": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-4x5-1": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x5-21": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x4-1": {
+      "status": "solved",
+      "steps": 53
+    },
+    "lgp-test-6x5-5": {
+      "status": "solved",
+      "steps": 65
+    },
+    "lgp-test-4x2-8": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x6-37": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-4x2-38": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x6-38": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x6-4": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 4
+    },
+    "lgp-test-3x3-29": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-4x5-31": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-6x6-14": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 92
+    },
+    "lgp-test-5x6-2": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 9
+    },
+    "lgp-test-3x3-12": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-6x6-32": {
+      "status": "solved",
+      "steps": 38
+    },
+    "lgp-test-3x3-31": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-2x5-26": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x3-29": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x3-18": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-4x2-5": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x4-31": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-5x3-31": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-3x2-17": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x5-2": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x5-15": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-4x6-20": {
+      "status": "solved",
+      "steps": 29
+    },
+    "lgp-test-3x2-16": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x3-27": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x3-34": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-4x2-10": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x5-3": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x2-24": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x6-22": {
+      "status": "solved",
+      "steps": 41
+    },
+    "lgp-test-6x3-1": {
+      "status": "solved",
+      "steps": 27
+    },
+    "lgp-test-3x2-34": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    },
+    "lgp-test-2x3-17": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x6-34": {
+      "status": "solved",
+      "steps": 44
+    },
+    "lgp-test-5x6-26": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-6x3-23": {
+      "status": "solved",
+      "steps": 20
+    },
+    "lgp-test-3x5-12": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 13
+    },
+    "lgp-test-5x4-21": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-3x2-24": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x6-10": {
+      "status": "solved",
+      "steps": 35
+    },
+    "lgp-test-5x4-24": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-5x3-15": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-3x3-36": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-3x6-28": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-4x3-33": {
+      "status": "solved",
+      "steps": 15
+    },
+    "lgp-test-2x6-7": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x6-34": {
+      "status": "solved",
+      "steps": 37
+    },
+    "lgp-test-5x5-26": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-4x5-26": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x6-15": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x4-27": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x2-23": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-2x3-33": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x3-23": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 8
+    },
+    "lgp-test-5x4-19": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-6x6-10": {
+      "status": "solved",
+      "steps": 79
+    },
+    "lgp-test-3x3-33": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-5x4-6": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-3x2-14": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x6-3": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x6-19": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-2x6-6": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x6-13": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-6x3-14": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-5x3-10": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-4x3-24": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x5-34": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-6x5-27": {
+      "status": "solved",
+      "steps": 46
+    },
+    "lgp-test-2x4-23": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x4-7": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-6x6-18": {
+      "status": "solved",
+      "steps": 37
+    },
+    "lgp-test-6x3-35": {
+      "status": "solved",
+      "steps": 103
+    },
+    "lgp-test-2x4-1": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x4-16": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x6-31": {
+      "status": "solved",
+      "steps": 33
+    },
+    "lgp-test-3x2-33": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x3-37": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-2x3-6": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x3-31": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-5x5-1": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    },
+    "lgp-test-2x6-36": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x6-31": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-3x6-10": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-6x4-2": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-6x4-26": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-5x2-33": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-5x3-3": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x3-9": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x4-20": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-4x6-5": {
+      "status": "solved",
+      "steps": 32
+    },
+    "lgp-test-2x4-0": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x6-27": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x5-7": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    },
+    "lgp-test-4x5-29": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-4x3-30": {
+      "status": "solved",
+      "steps": 15
+    },
+    "lgp-test-5x5-27": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-2x3-4": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-6x2-26": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-3x3-30": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 3
+    },
+    "lgp-test-5x2-18": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-3x5-32": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x3-27": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-3x6-7": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-2x4-19": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-3x6-29": {
+      "status": "solved",
+      "steps": 19
+    },
+    "lgp-test-2x4-14": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x6-30": {
+      "status": "solved",
+      "steps": 37
+    },
+    "lgp-test-3x5-24": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x6-21": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-3x2-20": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x5-39": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-6x6-4": {
+      "status": "solved",
+      "steps": 63
+    },
+    "lgp-test-3x5-28": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-6x6-23": {
+      "status": "solved",
+      "steps": 37
+    },
+    "lgp-test-5x4-34": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x6-3": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-6x2-25": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x6-17": {
+      "status": "solved",
+      "steps": 67
+    },
+    "lgp-test-2x2-6": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-6x4-10": {
+      "status": "solved",
+      "steps": 25
+    },
+    "lgp-test-6x2-28": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-3x4-4": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x2-3": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x3-19": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 7
+    },
+    "lgp-test-3x2-25": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x2-29": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-6x6-26": {
+      "status": "solved",
+      "steps": 46
+    },
+    "lgp-test-5x4-38": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (Search Exhausted)",
+      "steps": 7
+    },
+    "lgp-test-5x3-25": {
+      "status": "solved",
+      "steps": 16
+    },
+    "lgp-test-5x5-13": {
+      "status": "solved",
+      "steps": 49
+    },
+    "lgp-test-3x2-3": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-4x6-14": {
+      "status": "solved",
+      "steps": 27
+    },
+    "lgp-test-2x2-27": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-5x2-16": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-4x4-37": {
+      "status": "solved",
+      "steps": 17
+    },
+    "lgp-test-3x2-38": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x2-23": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-2x4-15": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-2x2-30": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-2x2-32": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-4x2-32": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x2-4": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-2x4-9": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-4x5-38": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-6x4-33": {
+      "status": "solved",
+      "steps": 29
+    },
+    "lgp-test-5x5-38": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-5x4-12": {
+      "status": "solved",
+      "steps": 21
+    },
+    "lgp-test-2x4-24": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x5-34": {
+      "status": "solved",
+      "steps": 31
+    },
+    "lgp-test-2x5-22": {
+      "status": "solved",
+      "steps": 11
+    },
+    "lgp-test-3x2-28": {
+      "status": "solved",
+      "steps": 7
+    },
+    "lgp-test-3x3-10": {
+      "status": "solved",
+      "steps": 10
+    },
+    "lgp-test-3x4-1": {
+      "status": "solved",
+      "steps": 13
+    },
+    "lgp-test-5x5-39": {
+      "status": "solved",
+      "steps": 26
+    },
+    "lgp-test-2x2-25": {
+      "status": "solved",
+      "steps": 5
+    },
+    "lgp-test-2x4-34": {
+      "status": "solved",
+      "steps": 9
+    },
+    "lgp-test-5x3-14": {
+      "status": "failed",
+      "reason": "IMPOSSIBLE (AC-3 Wiped Domain)",
+      "steps": 0
+    }
+  }
+}
