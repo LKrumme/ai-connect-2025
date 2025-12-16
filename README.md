@@ -25,5 +25,9 @@ We utilize a classic Constraint Satisfaction Problem (CSP) Solver.
 ---
 
 ## Usage Guide  
-// TODO: We don't have a run.py file Yet, will update when we do
+Firstly, you have to add your unsolved-Puzzle ``.parquet`` file to the ``/data`` Folder.
+
+Next, in the ``run.py`` file, in line 154, you set the variable ``PATH`` to the filepath of your chosen ``.parquet`` file, this would look like the following:
+
+``PATH = "data/Gridmode-00000-of-00001.parquet"``
 
