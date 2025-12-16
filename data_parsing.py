@@ -56,7 +56,7 @@ class DataParsing:
             self.result.at[index, "domains"] = results
 
     def _constraints(self):     
-        word_num = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9, 'ten':10, 'first':1, 'second':2, 'third':3, 'fourth':4, 'fifth':5, 'sixt':6, 'seventh':7, 'ninth':9, 'tenth':10}
+        word_num = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9, 'ten':10, 'first':1, 'second':2, 'third':3, 'fourth':4, 'fifth':5, 'sixth':6, 'seventh':7, 'ninth':9, 'tenth':10}
 
         puzzles = self.df['puzzle']
         domains = self.result.domains
@@ -149,8 +149,8 @@ class DataParsing:
                     #betweenConstraint
                     case _ if ' between' in con: 
                         print(f'between: {con}')
-                        print(BetweenContraint(first, second, distance=tmp_distance))
-                        constraint_list.append(BetweenContraint(first, second, distance=tmp_distance))
+                        print(BetweenConstraint(first, second, distance=tmp_distance))
+                        constraint_list.append(BetweenConstraint(first, second, distance=tmp_distance))
                 
                     #isNotConstraint
                     case _ if ' is not ' in con: 
@@ -161,8 +161,8 @@ class DataParsing:
                     #isConstraint
                     case _: 
                         print(f'is: {con}')
-                        print(IsContraint(first, second))
-                        constraint_list.append(IsContraint(first, second))
+                        print(IsConstraint(first, second))
+                        constraint_list.append(IsConstraint(first, second))
             self.result.at[index, 'constraints'] = constraint_list
                 
 
@@ -191,7 +191,7 @@ class LeftConstraint(Constraint):
     def __repr__(self):
         return f'<{self.__class__.__name__}, {self.x}, {self.y}, direct={self.direct}>' 
     
-class IsContraint(Constraint):
+class IsConstraint(Constraint):
     """Constraint for 'x is y' """
     def __init__(self,x,y):
         super().__init__(x, y)
@@ -216,7 +216,7 @@ class LeftOrRightConstraint(Constraint):
     def is_satisfied(self):
         return super().is_satisfied()
     
-class BetweenContraint(Constraint):
+class BetweenConstraint(Constraint):
     """Constraint for 'between x and y is distance House'"""
     def __init__(self,x,y,distance:int|None=0):
         super().__init__(x, y)
