@@ -44,23 +44,21 @@ class DataParsing:
 
             for line in problem.splitlines():
                 if line.strip().startswith("-"):
-
+                    
+                    i = i+1
                     # Filters all Expressions, that are in Between of '
                     # resulting List gets addedd as a new Domain
                     names = re.findall(r"`([^`]*)`", line)
                     results[vars[i]] = names
-                    i = i+1
+                
                     
 
             self.result.at[index, "domains"] = results
 
     def _constraints(self):     
-        #TODO convert words to numbers
+        word_num = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9, 'ten':10, 'first':1, 'second':2, 'third':3, 'fourth':4, 'fifth':5, 'sixth':6, 'seventh':7, 'ninth':9, 'tenth':10}
 
-        word_num = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9, 'ten':10, 'first':1, 'second':2, 'third':3, 'fourth':4, 'fifth':5, 'sixt':6, 'seventh':7, 'ninth':9, 'tenth':10}
-
-        # i think this shouldn't select just the first puzzle
-        puzzles = self.df['puzzle'][[0]]
+        puzzles = self.df['puzzle']
         domains = self.result.domains
 
         for index, puzzle in enumerate(puzzles):
@@ -68,81 +66,91 @@ class DataParsing:
             constraint_list = []    
             curr_domain = [item for sublist in domains[index].values() for item in sublist] #flatten nested list
 
-            # The 'House' domain contains Integers (1, 2, 3), which don't have a .lower() method.
-            # Cast to string first -> [str(x).lower()[:3] for x in curr_domain]
-            curr_domain_short = [x.lower()[:3] for x in curr_domain]
+            curr_domain_short = [str(x).lower()[:3] for x in curr_domain]
             #filter all constraints using '1.' etc.
             for i in puzzle.splitlines(): 
                 if re.match(r'^[0-9]+[.]', i):
-                    clue_list.append(i)
+                    clue_list.append(i[3:])
 
             #sort constraints
             for con in clue_list:
 
-                # We should strip the leading number (e.g. "1. ")
-                # because the loop below sometimes thinks "1." is a word and tries to match it.
                 first = None
                 second = None
                 tmp_distance=None
 
+                #TODO Later
                 # Replace the 3-character slicing logic with Length-Priority Matching
                 # 1. Sort `curr_domain` by length (descending).
                 # 2. Iterate through the domain and check `if item in constraint_string`.
                 # Sorting by length ensures specific entities ("Blue Master") are matched before generic ones ("Blue").
-                for word in con.split(' '):
-                    if word[:3].lower() in curr_domain_short and first==None:
-                        first = curr_domain[curr_domain_short.index(word.lower()[:3])]
-                    elif word[:3].lower() in curr_domain_short:
-                        second = curr_domain[curr_domain_short.index(word.lower()[:3])]
+            
 
-                    #TODO sometimes a number can also be an argument. This only works for the first puzzle 
-                    if word in word_num:
-                        tmp_distance = word_num[word]
+                # This is ugly. Please don't kill me
+                # Between constraints have a distance, which is a number, but we shouldn't confuse the distance with a value from our domain. 
+                if ' between ' in con: 
+                    for word in con.split(' '):
+                        if word[:3].lower() in curr_domain_short and first==None:
+                            first = curr_domain[curr_domain_short.index(word.lower()[:3])]
+                        elif word[:3].lower() in curr_domain_short:
+                            second = curr_domain[curr_domain_short.index(word.lower()[:3])]
+                        
+                        #permanently temporary
+                        if word in word_num:
+                            tmp_distance = word_num[word]
+                #for every other constraint a number can also be a argument so we convert that first.
+                else: 
+                    for word in con.split(' '):
+                        if word in word_num:
+                            word = str(word_num[word])
+                        
+                        if word[:3].lower() in curr_domain_short and first==None:
+                            first = curr_domain[curr_domain_short.index(word.lower()[:3])]
+                        elif word[:3].lower() in curr_domain_short:
+                            second = curr_domain[curr_domain_short.index(word.lower()[:3])]
                 
 
                 match(con):
                     #leftConstraint
                     #- clue contains 'left'
                     #- clue can be 'somewhere to the left' or 'directly left of' 
-                    case _ if ' left' in con:
-                        if ' directly ' in con:
-                            #direct left constraint    
-                            print(f'directly left: {con}')
-                            print(LeftConstraint(first, second))
-                            constraint_list.append(LeftConstraint(first, second))
-                        elif ' somewhere ' in con: 
-                            #somewhere left constraint
-                            print(f'somewhere left: {con}')
-                            print(LeftConstraint(first, second, direct=False))
-                            constraint_list.append(LeftConstraint(first, second, direct=False))
-                    #rightConstraint same as left constraint
-                    case _ if ' right' in con: 
-                        if ' somewhere ' in con: 
-                            #somewhere right constraint
-                            print(f'somewhere right: {con}')
-                            print(RightConstraint(first, second, direct=False))
-                            constraint_list.append(RightConstraint(first, second, direct=False))
+                    case _ if ' left' in con and ' directly ' in con:
+                        #direct left constraint    
+                        print(f'directly left: {con}')
+                        print(LeftConstraint(first, second))
+                        constraint_list.append(LeftConstraint(first, second))
+                        
+                    case _ if ' left' in con and ' somewhere ' in con:
+                        #somewhere left constraint
+                        print(f'somewhere left: {con}')
+                        print(LeftConstraint(first, second, direct=False))
+                        constraint_list.append(LeftConstraint(first, second, direct=False))
 
+                    #rightConstraint same as left constraint
+                    case _ if ' right' in con and ' somewhere ' in con: 
+                        #somewhere right constraint
+                        print(f'somewhere right: {con}')
+                        print(RightConstraint(first, second, direct=False))
+                        constraint_list.append(RightConstraint(first, second, direct=False))
+
+                    case _ if ' right' in con and ' directly ' in con: 
                         #there shuoldn't be a 'directly right' constraint. Leaving it just in case.    
-                        elif ' directly ' in con:
-                            #direct right constraint
-                            print(f'directly right: {con}')
-                            print(RightConstraint(first, second))
-                            constraint_list.append(RightConstraint(first, second))
+                        #direct right constraint
+                        print(f'directly right: {con}')
+                        print(RightConstraint(first, second))
+                        constraint_list.append(RightConstraint(first, second))
                     
                     #nextToConstraint: 
                     case _ if ' next to each other' in con: 
-                        #TODO distance
                         print(f'next to each other: {con}')
                         print(LeftOrRightConstraint(first, second))
                         constraint_list.append(LeftOrRightConstraint(first, second))
 
                     #betweenConstraint
                     case _ if ' between' in con: 
-                        #TODO distance
                         print(f'between: {con}')
-                        print(BetweenContraint(first, second, distance=tmp_distance))
-                        constraint_list.append(BetweenContraint(first, second, distance=tmp_distance))
+                        print(BetweenConstraint(first, second, distance=tmp_distance))
+                        constraint_list.append(BetweenConstraint(first, second, distance=tmp_distance))
                 
                     #isNotConstraint
                     case _ if ' is not ' in con: 
@@ -153,8 +161,8 @@ class DataParsing:
                     #isConstraint
                     case _: 
                         print(f'is: {con}')
-                        print(IsContraint(first, second))
-                        constraint_list.append(IsContraint(first, second))
+                        print(IsConstraint(first, second))
+                        constraint_list.append(IsConstraint(first, second))
             self.result.at[index, 'constraints'] = constraint_list
                 
 
@@ -183,7 +191,7 @@ class LeftConstraint(Constraint):
     def __repr__(self):
         return f'<{self.__class__.__name__}, {self.x}, {self.y}, direct={self.direct}>' 
     
-class IsContraint(Constraint):
+class IsConstraint(Constraint):
     """Constraint for 'x is y' """
     def __init__(self,x,y):
         super().__init__(x, y)
@@ -208,7 +216,7 @@ class LeftOrRightConstraint(Constraint):
     def is_satisfied(self):
         return super().is_satisfied()
     
-class BetweenContraint(Constraint):
+class BetweenConstraint(Constraint):
     """Constraint for 'between x and y is distance House'"""
     def __init__(self,x,y,distance:int|None=0):
         super().__init__(x, y)
