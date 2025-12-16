@@ -81,5 +81,14 @@ class BridgeParser:
                         final_constraints.append({"type": "equal", "var1": var1, "var2": var2})
                     elif ctype in ['IsNotConstraint', 'not_equal']:
                         final_constraints.append({"type": "not_equal", "var1": var1, "var2": var2})
+                    elif ctype in ['BetweenConstraint', 'between_constraint']:
+                        dist_val = getattr(c, 'distance', 0)
+                        if dist_val is None: dist_val = 0
+                        final_constraints.append({
+                            "type": "distance",
+                            "var1": var1,
+                            "var2": var2,
+                            "diff": int(dist_val) + 1
+                        })
 
         return variables, domains, final_constraints
