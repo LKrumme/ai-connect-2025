@@ -92,10 +92,17 @@ class Solver:
             case 'equal': return val1 == val2
             case 'not_equal': return val1 != val2
             case 'adjacent': return abs(val1 - val2) == 1
-            case 'left_of': return val1 < val2
-            case 'right_of': return val1 > val2
-            case 'directly_left': return val1 == val2 - 1
-            case 'directly_right': return val1 == val2 + 1
+
+            case 'left_of':
+                if constraint.get('direct') is True:
+                    return val1 == val2 - 1  # Directly Left
+                return val1 < val2           # Somewhere Left
+
+            case 'right_of':
+                if constraint.get('direct') is True:
+                    return val1 == val2 + 1  # Directly Right
+                return val1 > val2           # Somewhere Right
+
             case 'distance': return abs(val1 - val2) == constraint.get('diff', 0)
             case _: return True
 
