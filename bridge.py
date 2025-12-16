@@ -65,7 +65,12 @@ class BridgeParser:
                 # If Anchor, Apply Domain Reduction
                 if isinstance(var2, int):
                     if var1 in domains:
-                        domains[var1] &= {var2}
+                        if ctype in ['IsNotConstraint', 'not_equal']:
+                            #for example, "Guy is NOT 2" then Remove 2 from domain
+                            domains[var1].discard(var2)
+                        else:
+                            # "Guy IS 2" then Keep ONLY 2 in domain
+                            domains[var1] &= {var2}
                     continue
 
                     # If Binary, Add to Solver Constraints
