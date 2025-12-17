@@ -5,6 +5,24 @@ from data_parsing import DataParsing
 from bridge import BridgeParser
 from solver import Solver
 
+def format_grid_solution(assignment, size):
+    if not assignment: return "{}"
+
+    categories = sorted(list(set(k.split('_')[0] for k in assignment.keys() if '_' in k)))
+    header = ["House"] + categories
+
+    rows = [[str(i+1)] + [""] * len(categories) for i in range(size)]
+
+    for key, house_num in assignment.items():
+        if '_' in key:
+            category, value = key.split('_', 1)
+            col_idx = header.index(category)
+            row_idx = int(house_num) - 1
+            if 0 <= row_idx < size:
+                rows[row_idx][col_idx] = value
+
+    return json.dumps({"header": header, "rows": rows})
+
 def verify_ground_truth(solver_assignments, ground_truth_raw, bridge):
     if not solver_assignments:
         return False, "No Solution"
@@ -56,7 +74,7 @@ def verify_ground_truth(solver_assignments, ground_truth_raw, bridge):
 
     return True, "Match"
 
-def evaluate_dataset(parquet_path, output_path="final_results.json", limit=None):
+def evaluate_dataset(parquet_path, csv_path="result.csv", limit=None):
     print(f"Loading dataset from: {parquet_path}")
     df = pd.read_parquet(parquet_path)
 
@@ -78,10 +96,14 @@ def evaluate_dataset(parquet_path, output_path="final_results.json", limit=None)
         "results": {}
     }
 
+    csv_results = []
+
     print("-" * 50)
 
     for index, row in parsed_data.iterrows():
         p_id = row['id']
+        puzzle_size = int(row['size'][0]) # Assuming 'size' is like ['5', '5']
+
         try:
             bridge = BridgeParser(row['size'], row['constraints'], row['domains'])
             vars, doms, cons = bridge.get_solver_data()
@@ -90,6 +112,8 @@ def evaluate_dataset(parquet_path, output_path="final_results.json", limit=None)
             if len(cons) < 1:
                 print(f"Puzzle {index+1}: Parser found only {len(cons)} constraints")
                 results["failed"] += 1
+                # Add empty result to CSV for consistency
+                csv_results.append({"id": p_id, "grid_solution": "{}", "steps": 0})
                 continue
 
             solver = Solver(vars, doms, cons, max_steps=5000)
@@ -99,25 +123,37 @@ def evaluate_dataset(parquet_path, output_path="final_results.json", limit=None)
             results["total_steps"] += steps
 
             if solution:
-                ground_truth = df.iloc[index]['solution']
-                is_correct, reason = verify_ground_truth(solution, ground_truth, bridge)
+                grid_json = format_grid_solution(solution, puzzle_size)
+            else:
+                grid_json = "{}" # Empty string/json for failed puzzles
 
-                if is_correct:
-                    results["solved"] += 1
-                    results["results"][p_id] = {
-                        "status": "solved",
-                        "steps": steps,
-                        "verified": True
-                    }
-                    print(f"✓ Puzzle {index+1}: Solved & Verified ({steps} steps)")
+            csv_results.append({
+                "id": p_id,
+                "grid_solution": grid_json,
+                "steps": steps
+            })
+
+            if solution:
+                # Handling both of the puzzle files
+                # for the Gridmode file, with the solution column
+                if 'solution' in df.columns:
+                    ground_truth = df.iloc[index]['solution']
+                    is_correct, reason = verify_ground_truth(solution, ground_truth, bridge)
+
+                    if is_correct:
+                        results["solved"] += 1
+                        results["results"][p_id] = {"status": "solved", "steps": steps, "verified": True}
+                        print(f"✓ Puzzle {index+1}: Solved & Verified ({steps} steps)")
+                    else:
+                        results["failed"] += 1
+                        results["results"][p_id] = {"status": "failed", "reason": reason, "steps": steps}
+                        print(f"Puzzle {index+1}: Solved but WRONG -> {reason}")
+
+                # for the Test_100_Puzzles file, as it has no solution column
                 else:
-                    results["failed"] += 1
-                    results["results"][p_id] = {
-                        "status": "failed",
-                        "reason": f"Wrong Solution: {reason}",
-                        "steps": steps
-                    }
-                    print(f"Puzzle {index+1}: Solved but WRONG -> {reason}")
+                    results["solved"] += 1
+                    results["results"][p_id] = {"status": "submitted", "steps": steps}
+                    print(f"? Puzzle {index+1}: Solved")
             else:
                 results["failed"] += 1
                 results["results"][p_id] = {
@@ -130,6 +166,8 @@ def evaluate_dataset(parquet_path, output_path="final_results.json", limit=None)
         except Exception as e:
             results["errors"] += 1
             results["results"][p_id] = {"status": "error", "error": str(e)}
+            # Add error result to CSV
+            csv_results.append({"id": p_id, "grid_solution": "{}", "steps": 0})
             print(f"Error on {p_id}: {e}")
 
     # Final Stats
@@ -146,9 +184,9 @@ def evaluate_dataset(parquet_path, output_path="final_results.json", limit=None)
     print(f"Errors:        {results['errors']}")
     print("=" * 50)
 
-    with open(output_path, "w") as f:
-        json.dump(results, f, indent=2)
-    print(f"Detailed results saved to '{output_path}'")
+    # Save Submission CSV
+    pd.DataFrame(csv_results).to_csv(csv_path, index=False)
+    print(f"Submission file saved to '{csv_path}'")
 
 if __name__ == "__main__":
     PATH = "data/Gridmode-00000-of-00001.parquet"
