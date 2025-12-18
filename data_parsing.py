@@ -30,15 +30,14 @@ class DataParsing:
         text = self.df["puzzle"]
 
         for index, problem in enumerate(text):
-            results = []
+            results = {}
             houses = []
 
             # Filling up Houses
             for h_Count in range(int(df["size"][index][0])):
                 houses.append(h_Count)
 
-            h = {"House": houses}
-            results.append(h)
+            results["House"] = houses
             # Pattern looks for a Number, followed by a . (dot) at the start of the line and an optional space
             constraint_pattern = re.compile(r'^\d+\.\s*(\w+)')
             names = []
@@ -62,20 +61,17 @@ class DataParsing:
                 # Looking for Colors and Pets
                 elif re.match(r'^Colors:\s*(.+?)\.?$', line):
                     colors = [c.strip() for c in re.match(r'^Colors:\s*(.+?)\.?$', line).group(1).split(',')]
-                    colors_d = {"Colors": colors}
-                    results.append(colors_d)
+                    results["Colors"] = colors
 
                 elif re.match(r'^Pets:\s*(.+?)\.?$', line):
                     pets = [c.strip() for c in re.match(r'^Pets:\s*(.+?)\.?$', line).group(1).split(',')]
-                    pets_d = {"Pets": pets}
-                    results.append(pets_d)
+                    results["Pets"] = pets
 
             if len(names) < 3:
-                for index in range(3 - len(names)):
-                    names.append(f"Unknown_Name_{index + 1:02d}")
+                for i in range(3 - len(names)):
+                    names.append(f"Unknown_Name_{i + 1:02d}")
 
-            names_d = {"Names": names}
-            results.append(names_d)
+            results["Names"] = names
 
             self.result.at[index, "domains"] = results
 
