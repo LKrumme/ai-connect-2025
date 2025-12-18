@@ -18,7 +18,7 @@ class DataParsing:
         return self.result
 
     def _variables(self):
-        for index, text in enumerate(df["puzzle"]):
+        for index, text in enumerate(self.df["puzzle"]):
             self.result.at[index, 'variables'] = ["Houses", "Names", "Colors", "Pets"]
 
     def _domains(self):
@@ -34,7 +34,7 @@ class DataParsing:
             houses = []
 
             # Filling up Houses
-            for h_Count in range(int(df["size"][index][0])):
+            for h_Count in range(int(self.df["size"][index][0])):
                 houses.append(h_Count)
 
             results["House"] = houses
@@ -129,13 +129,19 @@ class DataParsing:
                             first = curr_domain[curr_domain_short.index(word.lower()[:3])]
                         elif word[:3].lower() in curr_domain_short:
                             second = curr_domain[curr_domain_short.index(word.lower()[:3])]
-                
+
+                        numbers = re.findall(r'\d', word)
+                        # match numbers
+                        if numbers and first==None:
+                            first = str(numbers[0])
+                        if numbers: 
+                            second = str(numbers[0])
 
                 match(con):
                     #leftConstraint
                     #- clue contains 'left'
                     #- clue can be 'somewhere to the left' or 'directly left of' 
-                    case _ if ' left' in con and ' directly ' in con:
+                    case _ if (' left' in con and ' directly ' in con) or (' left' in con and ' immediately ' in con):
                         #direct left constraint    
                         print(f'directly left: {con}')
                         print(LeftConstraint(first, second))
@@ -154,7 +160,7 @@ class DataParsing:
                         print(RightConstraint(first, second, direct=False))
                         constraint_list.append(RightConstraint(first, second, direct=False))
 
-                    case _ if ' right' in con and ' directly ' in con: 
+                    case _ if (' right' in con and ' directly ' in con) or (' right' in con and ' immediately ' in con): 
                         #there shuoldn't be a 'directly right' constraint. Leaving it just in case.    
                         #direct right constraint
                         print(f'directly right: {con}')
@@ -174,7 +180,7 @@ class DataParsing:
                         constraint_list.append(BetweenConstraint(first, second, distance=tmp_distance))
                 
                     #isNotConstraint
-                    case _ if ' is not ' in con: 
+                    case _ if ' is not ' in con or ' does not ' in con: 
                         print(f'is not: {con}')
                         print(IsNotConstraint(first, second))
                         constraint_list.append(IsNotConstraint(first, second))
