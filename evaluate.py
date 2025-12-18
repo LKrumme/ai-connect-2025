@@ -8,20 +8,46 @@ from solver import Solver
 def format_grid_solution(assignment, size):
     if not assignment: return "{}"
 
-    categories = sorted(list(set(k.split('_')[0] for k in assignment.keys() if '_' in k)))
-    header = ["House"] + categories
+    raw_categories = list(set(k.split('_')[0] for k in assignment.keys() if '_' in k))
+
+    # matches the prof's sequence
+    priority_order = ["name", "nationality", "color", "pet", "drink", "cigarette", "smoke", "job", "profession"]
+
+    def category_sort_key(cat):
+        # Normalize category to match the priority list (lowercase, remove plural 's')
+        norm = cat.lower()
+        if norm.endswith('ies'): norm = norm[:-3] + 'y'
+        elif norm.endswith('s') and not norm.endswith('ss'): norm = norm[:-1]
+
+        if norm in priority_order:
+            return priority_order.index(norm)
+        return 999
+
+    categories = sorted(raw_categories, key=category_sort_key)
+
+    display_header = ["House"]
+    for cat in categories:
+        if cat.endswith('ies'):
+            display_header.append(cat[:-3] + 'y')
+        elif cat.endswith('s') and not cat.endswith('ss'):
+            display_header.append(cat[:-1])
+        else:
+            display_header.append(cat)
 
     rows = [[str(i+1)] + [""] * len(categories) for i in range(size)]
 
     for key, house_num in assignment.items():
         if '_' in key:
             category, value = key.split('_', 1)
-            col_idx = header.index(category)
-            row_idx = int(house_num) - 1
-            if 0 <= row_idx < size:
-                rows[row_idx][col_idx] = value
 
-    return json.dumps({"header": header, "rows": rows})
+            if category in categories:
+                col_idx = categories.index(category) + 1
+                row_idx = int(house_num) - 1
+
+                if 0 <= row_idx < size:
+                    rows[row_idx][col_idx] = value
+
+    return json.dumps({"header": display_header, "rows": rows})
 
 def verify_ground_truth(solver_assignments, ground_truth_raw, bridge):
     if not solver_assignments:
@@ -189,5 +215,5 @@ def evaluate_dataset(parquet_path, csv_path="result.csv", limit=None):
     print(f"Submission file saved to '{csv_path}'")
 
 if __name__ == "__main__":
-    PATH = "data/Gridmode-00000-of-00001.parquet"
+    PATH = "data/Test_100_Puzzles.parquet"
     evaluate_dataset(PATH)
