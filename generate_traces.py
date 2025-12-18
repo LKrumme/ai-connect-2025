@@ -2,7 +2,7 @@ import pandas as pd
 import json
 from data_parsing import DataParsing
 from bridge import BridgeParser
-from solver import Solver
+from csp_solver import Solver
 
 def generate_traces(parquet_path, output_path="traces.json", limit=1000):
     df = pd.read_parquet(parquet_path)

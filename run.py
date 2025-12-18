@@ -1,8 +1,9 @@
 import pandas as pd
 import json
 import time
-from data_parsing import DataParsing
-from bridge import BridgeParser
+from solver import DataParsing
+from solver import BridgeParser
+from solver import generate_traces
 from solver import Solver
 
 def format_grid_solution(assignment, size):
@@ -216,4 +217,5 @@ def evaluate_dataset(parquet_path, csv_path="result.csv", limit=None):
 
 if __name__ == "__main__":
     PATH = "data/Test_100_Puzzles.parquet"
+    generate_traces(PATH)
     evaluate_dataset(PATH)
