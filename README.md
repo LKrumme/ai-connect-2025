@@ -18,9 +18,9 @@ We utilize a classic Constraint Satisfaction Problem (CSP) Solver.
 **Strategic Selection:** The program always starts at the "most volatile" part of the puzzle (where there are the fewest possible choices to make) to keep complexity low.  
 **Backtracking:** If a dead end is reached, the algorithm systematically takes one step back and tests alternative paths—similar to a pathfinder in a maze.
 
-3. Tracing: Next up, we Trace the Process of our Solver by Noting, which decisions were made in what Situation
+3. **Tracing:** Next up, we Trace the Process of our Solver by Noting, which decisions were made in what Situation
 
-4. Evaluation: Lastly, we run an Evaluation of our solved Puzzles and Evaluate our Accuracy, Efficiency and Generalization
+4. **Evaluation:** Lastly, we run an Evaluation of our solved Puzzles and Evaluate our Accuracy, Efficiency and Generalization
 
 ---
 

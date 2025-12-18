@@ -18,7 +18,8 @@ class DataParsing:
         return self.result
 
     def _variables(self):
-        self.result['variables'] = self.df["solution"].apply(lambda x: x.get("header", None))
+        for index, text in enumerate(self.df["puzzle"]):
+            self.result.at[index, 'variables'] = ["Houses", "Names", "Colors", "Pets"]
 
     def _domains(self):
         # The current logic assumes the lists in the text are always in the same order
@@ -26,34 +27,54 @@ class DataParsing:
         # We should use keywords (like checking if 'Red' is in the list) to match the correct list to the correct variable.
         # Otherwise, we end up assigning 'Red' to 'Name' and the solver breaks.
 
-        for index, problem in enumerate(self.df["puzzle"]):
-            vars = self.result.loc[index, "variables"]
+        text = self.df["puzzle"]
 
-            # output Directionairy
+        for index, problem in enumerate(text):
             results = {}
+            houses = []
 
-            i = 0
-            # "House" doesn't have given Values, so we generate them ourselves
-            if(vars[i] == "House"):
-                houses = []
+            # Filling up Houses
+            for h_Count in range(int(self.df["size"][index][0])):
+                houses.append(h_Count)
 
-                # Generates the Domain for houses
-                for h_Count in range(int(self.df["size"][index][0])):
-                    houses.append(h_Count+1)
-                    results["House"] = houses
+            results["House"] = houses
+            # Pattern looks for a Number, followed by a . (dot) at the start of the line and an optional space
+            constraint_pattern = re.compile(r'^\d+\.\s*(\w+)')
+            names = []
+            colors = []
+            pets = []
 
             for line in problem.splitlines():
-                if line.strip().startswith("-"):
-                    
-                    i = i+1
-                    # Filters all Expressions, that are in Between of '
-                    # resulting List gets addedd as a new Domain
-                    names = re.findall(r"`([^`]*)`", line)
-                    results[vars[i]] = names
-                
-                    
+
+                # Looking for Names
+                match = constraint_pattern.match(line)
+                if match:
+
+                    first_word = match.group(1)
+
+                    # The only possible first words in a Constraint can be "The", "House" and a Name, so we use this to filter out the Names
+                    if (first_word != "The" and first_word != "House"):
+
+                        if first_word not in names:
+                            names.append(first_word)
+
+                # Looking for Colors and Pets
+                elif re.match(r'^Colors:\s*(.+?)\.?$', line):
+                    colors = [c.strip() for c in re.match(r'^Colors:\s*(.+?)\.?$', line).group(1).split(',')]
+                    results["Colors"] = colors
+
+                elif re.match(r'^Pets:\s*(.+?)\.?$', line):
+                    pets = [c.strip() for c in re.match(r'^Pets:\s*(.+?)\.?$', line).group(1).split(',')]
+                    results["Pets"] = pets
+
+            if len(names) < 3:
+                for i in range(3 - len(names)):
+                    names.append(f"Unknown_Name_{i + 1:02d}")
+
+            results["Names"] = names
 
             self.result.at[index, "domains"] = results
+
 
     def _constraints(self):     
         word_num = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9, 'ten':10, 'first':1, 'second':2, 'third':3, 'fourth':4, 'fifth':5, 'sixth':6, 'seventh':7, 'ninth':9, 'tenth':10}
@@ -108,13 +129,19 @@ class DataParsing:
                             first = curr_domain[curr_domain_short.index(word.lower()[:3])]
                         elif word[:3].lower() in curr_domain_short:
                             second = curr_domain[curr_domain_short.index(word.lower()[:3])]
-                
+
+                        numbers = re.findall(r'\d', word)
+                        # match numbers
+                        if numbers and first==None:
+                            first = str(numbers[0])
+                        if numbers: 
+                            second = str(numbers[0])
 
                 match(con):
                     #leftConstraint
                     #- clue contains 'left'
                     #- clue can be 'somewhere to the left' or 'directly left of' 
-                    case _ if ' left' in con and ' directly ' in con:
+                    case _ if (' left' in con and ' directly ' in con) or (' left' in con and ' immediately ' in con):
                         #direct left constraint    
                         print(f'directly left: {con}')
                         print(LeftConstraint(first, second))
@@ -133,7 +160,7 @@ class DataParsing:
                         print(RightConstraint(first, second, direct=False))
                         constraint_list.append(RightConstraint(first, second, direct=False))
 
-                    case _ if ' right' in con and ' directly ' in con: 
+                    case _ if (' right' in con and ' directly ' in con) or (' right' in con and ' immediately ' in con): 
                         #there shuoldn't be a 'directly right' constraint. Leaving it just in case.    
                         #direct right constraint
                         print(f'directly right: {con}')
@@ -153,7 +180,7 @@ class DataParsing:
                         constraint_list.append(BetweenConstraint(first, second, distance=tmp_distance))
                 
                     #isNotConstraint
-                    case _ if ' is not ' in con: 
+                    case _ if ' is not ' in con or ' does not ' in con: 
                         print(f'is not: {con}')
                         print(IsNotConstraint(first, second))
                         constraint_list.append(IsNotConstraint(first, second))
@@ -238,6 +265,6 @@ class RightConstraint(Constraint):
         return super().is_satisfied()
     
 if __name__ == "__main__":
-    df = pd.read_parquet("data/Gridmode-00000-of-00001.parquet")
+    df = pd.read_parquet("data/Test_100_Puzzles.parquet")
     dp = DataParsing(df)
     print(dp.get_csp())
