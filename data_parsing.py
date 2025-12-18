@@ -69,7 +69,7 @@ class DataParsing:
 
             if len(names) < 3:
                 for i in range(3 - len(names)):
-                    names.append(f"Unknown_Name_{i + 1:02d}")
+                    names.append(f"")
 
             results["Names"] = names
 

@@ -46,5 +46,5 @@ def generate_traces(parquet_path, output_path="traces.json", limit=1000):
         json.dump(all_traces, f, indent=2)
 
 if __name__ == "__main__":
-    PATH = "data/Gridmode-00000-of-00001.parquet"
+    PATH = "data/Test_100_Puzzles.parquet"
     generate_traces(PATH)
