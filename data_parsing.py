@@ -19,7 +19,7 @@ class DataParsing:
 
     def _variables(self):
         for index, text in enumerate(df["puzzle"]):
-            self.result['variables'] = ["Houses", "Names", "Colors", "Pets"]
+            self.result.at[index, 'variables'] = ["Houses", "Names", "Colors", "Pets"]
 
     def _domains(self):
         # The current logic assumes the lists in the text are always in the same order
@@ -77,7 +77,7 @@ class DataParsing:
             names_d = {"Names": names}
             results.append(names_d)
 
-            self.result.loc[index, "Domains"] = results
+            self.result.at[index, "domains"] = results
 
 
     def _constraints(self):     
@@ -263,6 +263,6 @@ class RightConstraint(Constraint):
         return super().is_satisfied()
     
 if __name__ == "__main__":
-    df = pd.read_parquet("data/Gridmode-00000-of-00001.parquet")
+    df = pd.read_parquet("data/Test_100_Puzzles.parquet")
     dp = DataParsing(df)
     print(dp.get_csp())
